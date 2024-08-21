@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Q And Ans</title>
+</head>
+<body>
+
+<div>
+    <img class="mx-[29%] w-[45%] pt-8" src="images/sachivji.jpg" id="img1" alt="Sachiv Ji">
+    <p class="ml-[29%] pt-6">1. What is the Name Of This Character In Panchayat Web Series?</p>
+    <div class="ml-[30%] pt-2">
+        <input type="radio" name="A" id="opt1"> (A) Prahlad cha &nbsp;&nbsp;
+        <input type="radio" name="A" id="opt2"> (B) Abhishek &nbsp;&nbsp;
+        <input type="radio" name="A" id="opt3"> (C) Bhusan Ji &nbsp;&nbsp;
+        <input type="radio" name="A" id="opt4"> (D) Binod &nbsp;&nbsp;
+    </div>
+    <input type="button" value="Submit" class="h-8 bg-green-600 rounded-2xl px-4 mx-[46%] mt-8 hover:bg-green-700 active:bg-green-600" onclick="btnsubmit()">
+</div>
+
+<script>
+function btnsubmit() {
+
+if(opt2.checked){
+    window.location.assign("36img2.html");
+}
+else{
+alert("Wrong Answer")
+}
+
+}
+</script>
+
+</body>
+</html>

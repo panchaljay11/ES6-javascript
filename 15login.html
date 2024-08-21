@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <script src="https://cdn.tailwindcss.com"></script>
+     <title>Login</title>
+</head>
+<body class="bg-white flex items-center justify-center min-h-screen">
+
+<form>
+     <div class="container flex items-center justify-center">
+     <div class="flex flex-col bg-gray-500 p-8 rounded-2xl w-92 shadow-md shadow-slate-500 ">
+             
+               <!-- Username -->
+               <div>
+               <input class="px-3 h-10 mb-5 border-2 border-gray-200 rounded-md outline-blue-400" placeholder="User Name" type="text" id="uid">
+               <span class="text-red-600 mx-2 text-2xl -pt-" id="ans1" ></span>
+               </div>
+
+               <!-- Password -->
+               <div>              
+               <input class="px-3 h-10 mb-5 border-2 border-gray-200 rounded-md outline-blue-400" placeholder="Password"type="password" id="pid">
+               <span class="text-red-600 mx-2 text-2xl -pt-" id="ans2" ></span>
+               </div>
+
+               <!-- ReENTER PASSWORD-->
+               <div>
+               <input class="px-3 h-10 mb-5 border-2 border-gray-200 rounded-md outline-blue-400" placeholder="Recheck Password" type="password" id="rpid">
+               <span class="text-red-600 mx-2 text-md -pt-" id="ans3" ></span>
+               </div>
+
+               <div>
+               <label class="text-white">Gender  &nbsp; &nbsp;</label>
+               <select class="w-32" id="opt">
+               <option id="select">Select</option>
+               <option id="male">Male</option>
+               <option id="female">Female</option>
+               </select>
+               <span class="text-red-600 mx-2 text-md -pt-" id="ans4" ></span>
+               </div>
+                <br>
+                <!-- HOBBIES -->
+               <div>
+                    <label class="text-white">Hobbies : &nbsp; &nbsp;</label><br>
+                    <div class="text-slate-200">
+                    <input id="h1" type="checkbox"> cricket
+                    <input id="h2" type="checkbox"> football
+                    <input id="h3" type="checkbox"> badminton
+                    <span class="text-red-600 mx-2 text-md -pt-" id="ans5" ></span>
+                    </div>
+                    <br>
+               <!-- ADDRESS -->
+                    <div class="text-white">Address : </div>
+                    <textarea  id="address" class="px-6"></textarea>
+                    <span class="text-red-600 mx-2 text-md -pt-" id="ans6" ></span>
+                    <br>
+
+               <!--button Save  -->
+               
+                    <input class="bg-green-600 hover:bg-green-700 active:bg-green-800 font-bold 
+                    text-white  p-2 mr-4 rounded-lg my-4 px-[6rem]"type="button" value="Save" id="btnsave">                
+               
+                    
+     </div>
+     </div>
+
+</form>
+
+     <script>
+
+         let uid = document.querySelector("#uid");
+         let pid = document.querySelector("#pid");
+         let rpid = document.querySelector("#rpid");
+         let ans1 = document.querySelector("#ans1");
+         let ans2 = document.querySelector("#ans2");
+         let ans3 = document.querySelector("#ans3");
+         let ans4 = document.querySelector("#ans4");
+         let ans5 = document.querySelector("#ans5");
+         let ans6 = document.querySelector("#ans6");
+         let btnsave = document.querySelector("#btnsave");
+         let select= document.querySelector("#select");
+         let opt = document.querySelector("#opt");
+         let h1 = document.querySelector("#h1");
+         let h2 = document.querySelector("#h2");
+         let h3 = document.querySelector("#h3");
+         let address = document.querySelector("#address");
+         
+
+         btnsave.addEventListener("click",()=>{
+           
+         let username=(uid.value);
+         let password=(pid.value);
+         let repassword=(rpid.value);
+         let op=(opt.value);
+         let s=(select.value);
+         let c=0;
+         let x=address.value.length;
+
+         // USERNAME
+          if(username == ""){
+               ans1.innerHTML="*";
+          }
+
+          else{
+               ans1.innerHTML="";
+          }
+
+          // PASSWORD
+          if(password == ""){
+          ans2.innerHTML="*";
+          }
+          else{
+          ans2.innerHTML="";
+          }
+
+          // REPEAT PASSWORD
+          if(repassword == ""){
+          ans3.innerHTML="*";
+          }
+
+          else{
+          ans3.innerHTML="";
+          } 
+
+          // PASSWORD NOT MATCH
+          if(password !== repassword){
+          ans3.innerHTML="<br> Password not Match !";
+          }
+
+          else{
+          ans3.innerHTML="";
+          } 
+
+          // IF NOT SELECTED
+          if(op == s){
+          ans4.innerHTML="<br> Not Selected";
+          }
+
+          else{
+          ans4.innerHTML="";
+          } 
+          
+
+          // 
+          if(h1.checked){
+          
+          c=1;  
+     }
+      if(h2.checked){
+          
+          c=1;          
+     }
+     if(h3.checked){
+          
+          c=1;          
+     }
+     if(c == 0){
+          ans5.innerHTML="<br> No hobby selected";        
+     }
+     else{
+          ans5.innerHTML="";
+     }
+     if(x < 10){
+          ans6.innerHTML="<br> Enter Minimum 10 letters";
+     }
+     else{
+          ans6.innerHTML="";
+     }
+     
+         })
+       
+     </script>
+     
+</body>
+</html>

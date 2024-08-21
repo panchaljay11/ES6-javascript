@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <script src="https://cdn.tailwindcss.com"></script>
+     <title>Calculator</title>
+</head>
+
+<body class="bg-gray-500 flex items-center justify-center min-h-screen">
+
+<form >
+         <div class="flex flex-col bg-black   rounded-2xl h-[25rem] w-[21rem]  shadow-md 
+          shadow-slate-500  px-4 pt-[4rem]">
+
+               <!-- display -->
+               <input class="bg-black text-white text-xl px-3 -mt-8 h-10  border-4 border-red-600 rounded-2xl w-[18rem] outline-red-400 mx-2" readonly
+               type="text" id="txtno" placeholder=" Calculator" >
+               <br>
+             
+               <!-- number 1 -->
+               <input class="bg-yellow-600 hover:bg-yellow-500 active:bg-yellow-600 font-bold     w-[5rem] mx-4 text-black p-2 rounded-lg my-2"
+               type="button" value="1" id="btnno1"> 
+
+               <!-- number 2 -->
+               <input class="bg-yellow-600 hover:bg-yellow-500 active:bg-yellow-600 font-bold w-[5rem] ml-[7rem] -mt-12   text-black p-2 rounded-lg my-2"
+               type="button" value="2" id="btnno2">
+
+               <!-- number 3 -->
+               <input class="bg-yellow-600 hover:bg-yellow-500 active:bg-yellow-600 font-bold w-[5rem] ml-[13rem] -mt-12 text-black p-2 rounded-lg my-2
+               "type="button" value="3" id="btnno3">
+                   
+               <!-- number 4 -->
+               <input class="bg-yellow-600 hover:bg-yellow-500 active:bg-yellow-600 font-bold w-[5rem] mx-4 text-black p-2 rounded-lg my-2"
+               type="button" value="4" id="btnno4"> 
+
+               <!-- number 5 -->
+               <input class="bg-yellow-600 hover:bg-yellow-500 active:bg-yellow-600 font-bold w-[5rem] ml-[7rem] -mt-12 text-black p-2 rounded-lg my-2"
+               type="button" value="5" id="btnno5">
+
+               <!-- number 6 -->
+               <input class="bg-yellow-600 hover:bg-yellow-500 active:bg-yellow-600 font-bold w-[5rem] ml-[13rem] -mt-12 text-black p-2 rounded-lg my-2"
+               type="button" value="6" id="btnno6">
+
+               <!-- number7 -->
+               <input class="bg-yellow-600 hover:bg-yellow-500 active:bg-yellow-600 font-bold w-[5rem] mx-4 text-black p-2 rounded-lg my-2"
+               type="button" value="7" id="btnno7"> 
+
+               <!-- number 8 -->
+               <input class="bg-yellow-600 hover:bg-yellow-500 active:bg-yellow-600 font-bold w-[5rem] ml-[7rem] -mt-12 text-black p-2 rounded-lg my-2"
+               type="button" value="8" id="btnno8">
+
+               <!-- number 9 -->
+               <input class="bg-yellow-600 hover:bg-green-700 active:bg-green-800 font-bold w-[5rem] ml-[13rem] -mt-12 text-black p-2 rounded-lg my-2"
+               type="button" value="9" id="btnno9">
+
+               <!-- Addition -->
+               <input class="bg-gray-500 hover:bg-red-600 active:bg-red-700 font-bold w-[5rem] mx-4 text-white p-2 rounded-lg my-2"
+               type="button" value="+" id="btnadd"> 
+
+               <!-- Substraction -->
+               <input class="bg-gray-500 hover:bg-red-600 active:bg-red-700 font-bold w-[5rem] ml-[7rem] -mt-12 text-white p-2 rounded-lg my-2"
+               type="button" value="-" id="btnsub">
+
+               <!-- number 0 -->
+               <input class="bg-yellow-600 hover:bg-yellow-500 active:bg-yellow-600 font-bold w-[5rem] ml-[13rem] -mt-12 text-black p-2 rounded-lg my-2"
+               type="button" value="0" id="btnno0">
+
+                <!-- Multiplication -->
+                <input class="bg-gray-500 hover:bg-red-600 active:bg-red-700 font-bold w-[5rem] mx-4 text-white p-2 rounded-lg my-2"
+                type="button" value="&times;" id="btnmult">
+                
+                <!-- Division -->
+                <input class="bg-gray-500 hover:bg-red-600 active:bg-red-700 font-bold w-[5rem] ml-[7rem] -mt-12 text-white p-2 rounded-lg my-2"
+                type="button" value="&divide;" id="btndiv">
+
+                <!-- Answer -->
+                <input class="bg-green-600 hover:bg-green-500 active:bg-green-600 font-bold w-[5rem] ml-[13rem] -mt-12 text-white p-2 rounded-lg my-2"
+                type="button" value="=" id="btnans">
+                               
+          </div>
+
+</form>
+
+
+<script>
+      
+     let btnno1=document.querySelector("#btnno1");
+     let btnno2=document.querySelector("#btnno2");
+     let btnno3=document.querySelector("#btnno3");
+     let btnno4=document.querySelector("#btnno4");
+     let btnno5=document.querySelector("#btnno5");
+     let btnno6=document.querySelector("#btnno6");
+     let btnno7=document.querySelector("#btnno7");
+     let btnno8=document.querySelector("#btnno8");
+     let btnno9=document.querySelector("#btnno9");
+     let btnadd=document.querySelector("#btnadd");
+     let btnsub=document.querySelector("#btnsub");
+     let btnno0=document.querySelector("#btnno0");
+     let btnmult=document.querySelector("#btnmult");
+     let btndiv=document.querySelector("#btndiv");
+     let btnans=document.querySelector("#btnans");
+
+     let ans=document.querySelector("ans")
+     let txtno =document.querySelector("#txtno");
+
+        btnno1.addEventListener("click", ()=>{
+            txtno.value+="1";
+        })
+
+        btnno2.addEventListener("click", ()=>{
+            txtno.value+="2";
+        })
+
+        btnno3.addEventListener("click", ()=>{
+        txtno.value+="3";
+        })
+
+        btnno4.addEventListener("click", ()=>{
+        txtno.value+="4";
+        }) 
+
+        btnno5.addEventListener("click", ()=>{
+        txtno.value+="5";
+        })
+
+        btnno6.addEventListener("click", ()=>{
+        txtno.value+="6";
+        })
+
+        btnno7.addEventListener("click", ()=>{
+        txtno.value+="7";
+        })
+
+        btnno8.addEventListener("click", ()=>{
+        txtno.value+="8";
+        })
+
+        btnno9.addEventListener("click", ()=>{
+        txtno.value+="9";
+        })
+
+        btnadd.addEventListener("click", ()=>{
+        txtno.value+="+";
+        })
+
+        btnsub.addEventListener("click", ()=>{
+        txtno.value+="-";
+        })
+
+        btnno0.addEventListener("click", ()=>{
+        txtno.value+="0";
+        })
+
+        btnmult.addEventListener("click", ()=>{
+        txtno.value+= "*";
+        })
+
+        btndiv.addEventListener("click", ()=>{
+        txtno.value+="/";
+        })
+
+        btnans.addEventListener("click", ()=>{
+        txtno.value=eval(txtno.value);
+        })
+
+</script>
+
+</body>
+</html>

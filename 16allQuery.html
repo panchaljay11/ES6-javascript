@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <title>Query Selector</title>
+</head>
+<body class="bg-white flex items-center justify-center min-h-screen">
+
+<form>
+     <div class="container flex items-center justify-center">
+     <div class="flex flex-col bg-gray-500 p-8 rounded-2xl w-92 shadow-xl shadow-slate-500 ">
+
+          <div class="text-white">
+               <p class="hello">hello</p>
+               <p class="hello">hello two</p>
+               <p class="hello">hello three</p>
+               <p class="hello">hello four</p>
+          </div>
+           <br>
+          <div class="text-white">
+               <input class="bg-green-600 hover:bg-green-700 pr-4  active:bg-green-800 font-bold p-2 mr-4 rounded-lg my-4 " 
+               type="button" value=" Qselector " onclick="qselector()">
+               <br>
+               <input class="bg-green-600 hover:bg-green-700 active:bg-green-800 font-bold p-2 mr-4 rounded-lg  "
+               type="button" value="Qselectorall" onclick="qselectorAll()">
+          </div>
+                      
+   
+     </div>
+     </div>
+
+</form>
+
+     <script>
+
+          function qselector(){
+               document.querySelector(".hello").style.color="#FF0000";
+          }
+
+          // Used For Select All Queries
+          function qselectorAll(){
+
+               let x = document.querySelectorAll(".hello");
+
+               for(let i = 0; i < x.length; i++){
+                    x[i].style.color="#FF0000";
+               }
+          }
+
+     </script>
+     
+</body>
+</html>

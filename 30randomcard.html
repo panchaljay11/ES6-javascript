@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <script src="https://cdn.tailwindcss.com"></script>
+     <title> Random card</title>
+</head>
+
+<body class="bg-black flex items-center justify-center min-h-screen">
+
+<form >
+
+     <div class="flex flex-col bg-black rounded-xl h-[28rem] w-[40rem] px-6  ">
+
+<div class="flex mx-2 space-x-6 m-4">
+<img src="images/Ace.jpg" id="card1" class=" reset w-[6rem] h-[9rem] hover: cursor-pointer rounded-md" >
+<img src="images/king.jpg" id="card2" class=" reset w-[6rem] h-[9rem] hover: cursor-pointer rounded-md" >
+<img src="images/queen.jpg" id="card3" class=" reset w-[6rem] h-[9rem] hover: cursor-pointer rounded-md" >
+<img src="images/joker.jpg" id="card4" class=" reset w-[6rem] h-[9rem] hover: cursor-pointer rounded-md" >
+<img src="images/jack.jpg" id="card5" class=" reset w-[6rem] h-[9rem] hover: cursor-pointer rounded-md" >
+</div>
+<div class="flex mx-2 space-x-6">
+<img src="images/2.jpg" id="card6" class=" reset w-[6rem] h-[9rem] hover: cursor-pointer rounded-md" >
+<img src="images/7.jpg" id="card7" class=" reset w-[6rem] h-[9rem] hover: cursor-pointer rounded-md" >
+<img src="images/3.jpg" id="card8" class=" reset w-[6rem] h-[9rem] hover: cursor-pointer rounded-md" >
+<img src="images/8.jpg" id="card9" class=" reset w-[6rem] h-[9rem] hover: cursor-pointer rounded-md" >
+<img src="images/9.jpg" id="card10" class=" reset w-[6rem] h-[9rem] hover: cursor-pointer rounded-md" > 
+<span id="ans"></span>     
+
+</div>
+          <div class="flex ml-[43%] mt-6"> <!-- Reset -->
+     
+               <input class="bg-green-600  active:bg-green-800 font-bold text-lg text-white rounded-xl 
+                  w-[25%] cursor-pointer   mb-2 mt-6 text-sm h-[55%] mr-2"
+                  type="button" value="Generate"  onclick="Generate()">
+            
+          </div>
+          
+     </div>
+</form>
+
+<script>
+    
+    function Generate() {
+      // Array of image sources
+      let images = ["images/2.jpg","images/3.jpg","images/7.jpg","images/8.jpg",
+                "images/9.jpg","images/Ace.jpg","images/jack.jpg",
+                "images/joker.jpg","images/king.jpg","images/queen.jpg"];
+
+      // Shuffle the images array
+      images.sort(() => Math.random() - 0.5);
+
+      // Select all images
+      let cardImages = document.querySelectorAll('.reset');
+
+      // Assign shuffled image sources to each image element
+      cardImages.forEach((img, index) => {
+        img.src = images[index];
+      });
+    }
+    // Initial call to display cards when the page loads
+    Generate();
+ 
+</script>
+
+</body>
+</html>

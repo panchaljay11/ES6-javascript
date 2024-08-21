@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+</head>
+<style>
+     body{
+          background-size: cover;
+          background-position: center;
+     
+          
+     }
+</style>
+<body>
+    <!-- The body content goes here -->
+</body>
+<script>
+    // Array of colors to cycle through
+    let image = ["img1.jpg","img2.jpg"];
+    let a = 0;
+
+    // Define the callback function to change the background color
+    function changeBackgroundColor() {
+    
+        document.body.style.backgroundImage = `url(${image[a]})`;
+        a = (a + 1) % image.length; // Cycle through the colors
+    }
+
+    // Call the function every 1000 milliseconds (1 second)
+    setInterval(changeBackgroundColor, 2000);
+
+</script>
+</html>

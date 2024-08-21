@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records</title>
+</head>
+<body>
+
+<script>
+    // Array of student objects
+    let students = [
+        { id: 1, name: "John Doe", grade: "A" },
+        { id: 2, name: "Jane Smith", grade: "B" },
+        { id: 3, name: "Alice Johnson", grade: "A" },
+        { id: 4, name: "Michael Brown", grade: "C" },
+        { id: 5, name: "Emily Davis", grade: "B" }
+    ];
+
+    // Filter students with grade "A" using an arrow function
+    let topStudents = students.filter(student => student.grade === "A");
+
+    // Display the filtered students
+    topStudents.forEach(student => {
+        document.writeln(`ID: ${student.id}, Name: ${student.name}, Grade: ${student.grade}<br>`);
+    });
+
+</script>
+
+</body>
+</html>

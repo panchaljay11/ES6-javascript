@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 p-6 font-sans">
+
+    <div class="container mx-auto">
+        <div class="mb-6">
+            <table id="Table1" class="min-w-full bg-white border border-gray-300 rounded-lg">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="py-2 px-2 border-b">ENo</th>
+                        <th class="py-2 px-2 border-b">Employee Name</th>
+                        <th class="py-2 px-2 border-b">Salary</th>
+                        <th class="py-2 px-2 border-b">Gender</th>
+                        <th class="py-2 px-2 border-b">Department</th>
+                    </tr>
+                </thead>
+                <tbody id="tb1">
+                    <!-- Data inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mb-6">
+            <input type="text" id="eno" placeholder="Enter Employee Number" class="border border-gray-300 rounded-lg py-2 px-4 mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button onclick="btnsubmit()" class="bg-blue-500 text-white rounded-lg py-2 px-4 hover:bg-blue-600">Submit</button>
+        </div>
+
+        <div>
+            <table id="Table2" class="min-w-full bg-white border border-gray-300 rounded-lg">
+                <tbody id="tb2">
+                    <!-- Data inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+
+        let Employee = [
+            { eno: 1, ename: "John Doe", salary: 50000, gender: "Male", dname: "Engineering" },
+            { eno: 2, ename: "Jane Smith", salary: 55000, gender: "Female", dname: "Marketing" },
+            { eno: 3, ename: "Alice Johnson", salary: 60000, gender: "Female", dname: "Sales" },
+            { eno: 4, ename: "Michael Brown", salary: 45000, gender: "Male", dname: "Support" },
+            { eno: 5, ename: "Emily Davis", salary: 70000, gender: "Female", dname: "Engineering" },
+            { eno: 6, ename: "Chris Wilson", salary: 65000, gender: "Male", dname: "Finance" },
+            { eno: 7, ename: "Linda Martinez", salary: 72000, gender: "Female", dname: "HR" },
+            { eno: 8, ename: "David Lee", salary: 48000, gender: "Male", dname: "Support" },
+            { eno: 9, ename: "Sophia Taylor", salary: 50000, gender: "Female", dname: "Marketing" },
+            { eno: 10, ename: "Daniel Harris", salary: 58000, gender: "Male", dname: "Sales" },
+            { eno: 11, ename: "Olivia Clark", salary: 75000, gender: "Female", dname: "Engineering" },
+            { eno: 12, ename: "Matthew Lewis", salary: 52000, gender: "Male", dname: "Finance" },
+            { eno: 13, ename: "Ava Robinson", salary: 49000, gender: "Female", dname: "Support" },
+            { eno: 14, ename: "Joshua Walker", salary: 68000, gender: "Male", dname: "Engineering" },
+            { eno: 15, ename: "Mia Hall", salary: 53000, gender: "Female", dname: "HR" },
+        ];
+
+        Employee.forEach(emp => {
+            let row = `<tr>
+                <td class="py-2 px-4 border-b">${emp.eno}</td>
+                <td class="py-2 px-4 border-b">${emp.ename}</td>
+                <td class="py-2 px-4 border-b">${emp.salary}</td>
+                <td class="py-2 px-4 border-b">${emp.gender}</td>
+                <td class="py-2 px-4 border-b">${emp.dname}</td>
+            </tr>`;
+
+            document.getElementById("tb1").innerHTML += row;
+        });
+
+        function btnsubmit() {
+            let eno = parseInt(document.getElementById('eno').value);
+            let name = Employee.filter(emp => emp.eno === eno);
+
+            name.forEach(emp => {
+                let row1 = `<tr>
+                    <td class="py-2 px-4 border-b">${emp.eno}</td>
+                    <td class="py-2 px-4 border-b">${emp.ename}</td>
+                    <td class="py-2 px-4 border-b">${emp.salary}</td>
+                    <td class="py-2 px-4 border-b">${emp.gender}</td>
+                    <td class="py-2 px-4 border-b">${emp.dname}</td>
+                </tr>`;
+
+                document.getElementById("tb2").innerHTML += row1;
+            });
+        }
+    </script>
+
+</body>
+</html>

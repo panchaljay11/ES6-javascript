@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <script src="https://cdn.tailwindcss.com"></script>
+     <title>Tic Tac Toe</title>
+</head>
+
+<body class="bg-black flex items-center justify-center min-h-screen">
+
+<form >
+
+         <div class="flex flex-col bg-gray-200   rounded-3xl h-[22rem] w-[21rem]  shadow-xl shadow-white  px-4 pt-[2rem] mb-12 ">
+
+               <!-- number 1 -->
+               <input class="reset bg-gray-400 hover:bg-gray-300 active:bg-gray-400 font-bold w-[5rem] h-[4rem] mx-4 text-black p-2 rounded-xl my-4 "
+               type="button" value="" id="btn1" > 
+
+               <!-- number 2 -->
+               <input class="reset bg-gray-400 hover:bg-gray-300 active:bg-gray-400 font-bold w-[5rem] ml-[7rem] -mt-12   text-black p-2 rounded-xl my-2 h-[4rem] -mt-[5rem]"
+               type="button" value="" id="btn2" >
+
+               <!-- number 3 -->
+               <input class="reset bg-gray-400 hover:bg-gray-300 active:bg-gray-400 font-bold w-[5rem] ml-[13rem] -mt-[23%] text-black p-2 rounded-xl my-2 h-[4rem]
+               "type="button" value="" id="btn3"  >
+
+
+               <!-- number 4 -->
+               <input class="reset bg-gray-400 hover:bg-gray-300 active:bg-gray-400 font-bold w-[5rem] h-[4rem] mx-4 text-black p-2 rounded-xl my-4 "
+               type="button" value="" id="btn4"> 
+
+               <!-- number 5 -->
+               <input class="reset bg-gray-400 hover:bg-gray-300 active:bg-gray-400 font-bold w-[5rem] ml-[7rem] -mt-12   text-black p-2 rounded-xl my-2 h-[4rem] -mt-[5rem]"
+               type="button" value="" id="btn5" >
+
+               <!-- number 6 -->
+               <input class="reset bg-gray-400 hover:bg-gray-300 active:bg-gray-400 font-bold w-[5rem] ml-[13rem] -mt-[23%] text-black p-2 rounded-xl my-2 h-[4rem]
+               "type="button" value="" id="btn6" >
+
+
+               <!-- number 7 -->
+               <input class="reset bg-gray-400 hover:bg-gray-300 active:bg-gray-400 font-bold w-[5rem] h-[4rem] mx-4 text-black p-2 rounded-xl my-4 "
+               type="button" value="" id="btn7" > 
+
+               <!-- number 8 -->
+               <input class="reset bg-gray-400 hover:bg-gray-300 active:bg-gray-400 font-bold w-[5rem] ml-[7rem] -mt-12   text-black p-2 rounded-xl my-2 h-[4rem] -mt-[5rem]"
+               type="button" value="" id="btn8">
+
+               <!-- number 9 -->
+               <input class="reset bg-gray-400 hover:bg-gray-300 active:bg-gray-400 font-bold w-[5rem] ml-[13rem] -mt-[23%] text-black p-2 rounded-xl my-2 h-[4rem]
+               "type="button" value="" id="btn9" >
+               <br>
+               <!-- Reset -->
+               <input class="bg-gray-400 hover:bg-gray-300 active:bg-gray-400 font-bold text-lg text-white rounded-xl h-[2rem] mx-24 mb-2 
+               "type="button" value="Reset"  onclick="qselectorAll()">
+                               
+          </div>
+</form>
+
+<script>
+
+let btn1=document.querySelector("#btn1");
+let btn2=document.querySelector("#btn2");
+let btn3=document.querySelector("#btn3");
+let btn4=document.querySelector("#btn4");
+let btn5=document.querySelector("#btn5");
+let btn6=document.querySelector("#btn6");
+let btn7=document.querySelector("#btn7");
+let btn8=document.querySelector("#btn8");
+let btn9=document.querySelector("#btn9");
+
+
+let c=1;
+let k=0;
+
+btn1.addEventListener("click", ()=>{
+     if(c%2==0){
+     btn1.value="X";
+     }
+     else{
+     btn1.value="O";
+     } 
+     c++;
+     winner();
+     document.getElementById("btn1").disabled = true;
+     })
+
+btn2.addEventListener("click", ()=>{
+     if(c%2==0){
+     btn2.value="X";
+     }
+     else{
+     btn2.value="O";
+     }
+     c++;
+     winner();
+     document.getElementById("btn2").disabled = true;
+     })
+
+btn3.addEventListener("click", ()=>{
+     if(c%2==0){
+     btn3.value="X";
+     }
+     else{
+     btn3.value="O";
+     }
+     c++;
+     winner();
+     document.getElementById("btn3").disabled = true;
+     })
+
+btn4.addEventListener("click", ()=>{
+     if(c%2==0){
+     btn4.value="X"; 
+     }
+     else{
+     btn4.value="O";
+     }
+     c++;
+     winner();
+     document.getElementById("btn4").disabled = true;
+     })
+
+btn5.addEventListener("click", ()=>{
+     if(c%2==0){
+     btn5.value="X";
+     }
+     else{
+     btn5.value="O";
+     }
+     c++;
+     winner();
+     document.getElementById("btn5").disabled = true;
+     })
+
+btn6.addEventListener("click", ()=>{
+     if(c%2==0){
+     btn6.value="X";
+     }
+     else{
+     btn6.value="O";
+     }
+     c++;
+     winner();
+     document.getElementById("btn6").disabled = true;
+     })
+
+btn7.addEventListener("click", ()=>{
+     if(c%2==0){
+     btn7.value="X";
+     }
+     else{
+     btn7.value="O";
+     }
+     c++;
+     winner();
+     document.getElementById("btn7").disabled = true;
+     })
+
+btn8.addEventListener("click", ()=>{
+     if(c%2==0){
+     btn8.value="X";
+     }
+     else{
+     btn8.value="O";
+     }
+     c++;
+     winner();
+     document.getElementById("btn8").disabled = true;
+     })
+
+btn9.addEventListener("click", ()=>{
+     if(c%2==0){
+     btn9.value="X";
+     }
+     else{
+     btn9.value="O";
+     }
+     c++;
+     winner();
+     document.getElementById("btn9").disabled = true;
+     })
+
+
+function winner()
+{ 
+     // number 1--2--3
+     if(btn1.value==btn2.value && btn1.value==btn3.value)
+     {
+          if(btn1.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+
+          }
+          else if(btn1.value=="O")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+
+          } 
+     }
+
+     //number 4--5-- 6
+     if(btn4.value==btn5.value && btn4.value==btn6.value)
+     {
+          if(btn4.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+           
+          }
+          else if(btn4.value=="O")
+          {
+          alert("PLAYER 2 is WINNER");
+          k=1;
+
+          }
+     }
+
+     //number 7--8--9
+     if(btn7.value==btn8.value && btn7.value==btn9.value)
+     {
+          if(btn7.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+           
+          }
+          else if(btn7.value=="O")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;  
+          }
+     }
+
+     // number 1--4--7
+     if(btn1.value==btn4.value && btn1.value==btn7.value)
+     {
+          if(btn1.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+ 
+          }
+          else if(btn1.value=="O")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+          
+          }
+     }
+
+     // number 2--5--8
+     if(btn2.value==btn5.value && btn2.value==btn8.value)
+     {
+          if(btn2.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+           
+          }
+          else if(btn2.value=="O")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+          
+          }
+     }
+
+     //number 3--6--9
+     if(btn3.value==btn6.value && btn3.value==btn9.value)
+     {
+          if(btn3.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+     
+          }
+          else if(btn3.value=="O")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+            
+          }
+     }
+
+     // number 1--5--9
+     if(btn1.value==btn5.value && btn1.value==btn9.value)
+     {
+          if(btn1.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+           
+          }
+          else if(btn1.value=="O")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+
+          }
+     }
+
+    //number 3--5--7
+    if(btn3.value==btn5.value && btn3.value==btn7.value)
+     {
+          if(btn3.value=="X")
+          {
+           alert("player 1 WINNER");
+           k=1;
+           
+          }
+          else if(btn3.value=="O")
+          {
+            alert("PLAYER 2 is WINNER");
+            k=1;
+          
+          }
+     }
+
+     if(c==10 && k==0)
+     {
+     alert("---Draw---");
+     }
+
+}
+
+function qselectorAll(){
+     
+
+     c=1;
+     k=0;
+
+     let x = document.querySelectorAll(".reset");
+
+               for(let i = 0; i < x.length; i++){
+
+                    x[i].disabled=false;
+                    x[i].value="";
+               }
+}
+
+</script>
+
+</body>
+</html>

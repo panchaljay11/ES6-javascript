@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <script src="https://cdn.tailwindcss.com"></script>
+     <title>Are Of Triangle</title>
+</head>
+
+<body class="bg-black flex items-center justify-center min-h-screen">
+
+<form >
+
+     <div class="container flex items-center justify-center">
+          <div class="flex flex-col bg-slate-700 p-8 rounded-2xl w-80 shadow-md shadow-slate-500">
+               <!-- Height -->
+               <input class="px-3 h-10 mb-5 border-2 border-gray-200 rounded-md outline-blue-400" type="text" placeholder="Enter Height" id="height">
+               <!-- Base -->
+               <input class="px-3 h-10 mb-5 border-2 border-gray-200 rounded-md outline-blue-400" type="text" placeholder="Enter Base" id="base">
+               <br>
+               <!-- Button -->
+               <input class="bg-green-600 hover:bg-green-700 active:bg-green-800 font-bold 
+               text-white p-2 rounded-lg my-4"type="button" value="Answer" id="sum">          
+               <br>
+               <!-- -- Answer -- -->
+               <span class="text-xl text-white  mx-[22px]" id="ans"></span>
+                 
+          </div>
+     </div>
+
+</form>
+
+     <script>
+          let height = document.querySelector("#height");
+          let base = document.querySelector("#base");
+          let ans = document.querySelector("#ans");
+          let add=document.querySelector("#sum");
+          
+  
+          add.addEventListener("click",()=>{
+
+              //alert("check");
+              let h = parseFloat(height.value);
+              let b = parseFloat(base.value);
+              let area = h*b*0.5;
+
+              ans.innerHTML = "Area Of Triangle = "+area;
+          })
+  
+     </script>
+
+</body>
+</html>

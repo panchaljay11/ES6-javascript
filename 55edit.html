@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   First Name: <input type="text" id="fname"><br><br>
+   Last Name:  <input type="text" id="lname"><br><br>
+   <button value="submit" onclick="push()">Submit</button>
+
+   <div id="output"></div> <!-- Div to display the table -->
+</body>
+<script>
+    let student = [];a
+
+    function push() {
+        let fname = document.getElementById("fname").value;
+        let lname = document.getElementById("lname").value;
+
+        student.push({ Firstname: fname, Lastname: lname });
+      
+        // Create table headers
+        let table = "<table border='1'><tr><th>First Name</th><th>Last Name</th><th>Edit</th></tr>";
+
+        // Loop through the student array and add rows to the table
+        for(let i = 0; i < student.length; i++) {
+            table += "<tr><td>" + student[i].Firstname + "</td><td>" + student[i].Lastname +"</td><td><button onclick='edit("+ i +")'>Edit</button></td> <td><button onclick='Delete("+ i +")'>Delete</button></td></tr>";
+        }
+
+        table += "</table>";
+
+        // Display the table in the output div
+        document.getElementById('output').innerHTML = table;
+    }
+
+    function edit(index) {
+        document.getElementById("fname").value = student[index].Firstname;
+        document.getElementById("lname").value = student[index].Lastname;
+
+        // Remove the student from the array so that the updated entry can be pushed again
+        student.splice(index, 1);
+    }
+
+    function Delete(index) {
+        document.getElementById("fname").value = student[index].Firstname;
+        document.getElementById("lname").value = student[index].Lastname;
+
+        // Remove the student from the array so that the updated entry can be pushed again
+        student.splice(index, 1);
+        
+    }
+</script>
+</html>
